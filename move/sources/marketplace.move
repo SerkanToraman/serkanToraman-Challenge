@@ -84,7 +84,7 @@ public fun buy_hero(list_hero: ListHero, coin: Coin<SUI>, ctx: &mut TxContext) {
         // let ListHero { id, nft, price, seller } = list_hero;
    
      // TODO: Use assert! to verify coin value equals listing price (coin::value(&coin) == price) else abort with `EInvalidPayment`
-     assert!(coin::value(&coin)==price,1);
+     assert!(coin::value(&coin)==price,EInvalidPayment);
 
     // TODO: Transfer coin to seller (use transfer::public_transfer() function)
     transfer::public_transfer(coin, seller);
