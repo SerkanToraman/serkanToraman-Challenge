@@ -185,7 +185,10 @@ export default function EventsHistory() {
                           color="gray"
                           style={{ fontFamily: "monospace" }}
                         >
-                          ID: {eventData.id.slice(0, 8)}...
+                          ID:{" "}
+                          {eventData.id
+                            ? eventData.arena_id.slice(0, 8) + "..."
+                            : "N/A"}
                         </Text>
                       </>
                     )}
@@ -200,7 +203,10 @@ export default function EventsHistory() {
                           color="gray"
                           style={{ fontFamily: "monospace" }}
                         >
-                          ID: {eventData.id.slice(0, 8)}...
+                          ID:{" "}
+                          {eventData.id
+                            ? eventData.id.slice(0, 8) + "..."
+                            : "N/A"}
                         </Text>
                       </>
                     )}
@@ -209,11 +215,11 @@ export default function EventsHistory() {
                       <>
                         <Text size="3">
                           <strong>🏆 Winner:</strong> ...
-                          {eventData.winner.slice(-8)}
+                          {eventData.winner_hero_id.slice(-8)}
                         </Text>
                         <Text size="3">
                           <strong>💀 Loser:</strong> ...
-                          {eventData.loser.slice(-8)}
+                          {eventData.loser_hero_id.slice(-8)}
                         </Text>
                       </>
                     )}
